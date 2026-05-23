@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# AI answer engines / GEO crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+# PRE-LAUNCH TODO: replace verix.example with the real domain once purchased.
+Sitemap: https://verix.example/sitemap.xml

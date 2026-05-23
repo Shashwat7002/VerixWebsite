@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verix — Biometric Payments That End Card &amp; Chargeback Fraud</title>
+  <meta name="description" content="Verix turns a shopper's face into their payment credential at the POS — ending stolen-card fraud and chargeback fraud for retail, gaming, restaurants, and more." />
+  <meta name="author" content="Verix" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0F0E17" />
+  <!-- PRE-LAUNCH TODO: replace every "verix.example" with the real domain once purchased
+       (canonical, Open Graph, Twitter, JSON-LD, robots.txt, sitemap.xml). -->
+  <link rel="canonical" href="https://verix.example/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Verix" />
+  <meta property="og:title" content="Verix — Biometric Payments That End Card &amp; Chargeback Fraud" />
+  <meta property="og:description" content="A payment credential bound to the cardholder's face. Nothing to steal or clone, and proof the real account holder approved every charge — so card fraud and chargeback fraud both stop." />
+  <meta property="og:url" content="https://verix.example/" />
+  <meta property="og:image" content="https://verix.example/og-cover.png" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Verix — Biometric Payments That End Card &amp; Chargeback Fraud" />
+  <meta name="twitter:description" content="Pay by face at the POS. No card to steal, and biometric proof that defeats chargeback fraud." />
+  <meta name="twitter:image" content="https://verix.example/og-cover.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 36'%3E%3Cpath d='M5 6 20 30 35 6' fill='none' stroke='%235B47E0' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Verix",
+    "url": "https://verix.example/",
+    "logo": "https://verix.example/logo.svg",
+    "description": "Verix is a biometric payment credential that replaces cards at the point of sale to eliminate card fraud and chargeback fraud.",
+    "sameAs": ["https://www.linkedin.com/company/verix", "https://x.com/verix"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Verix",
+    "url": "https://verix.example/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Verix",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "POS terminals, iOS, Android",
+    "description": "A face-bound payment credential for POS systems that eliminates card fraud and chargeback fraud across retail, gaming, restaurants, healthcare, stadiums, and hospitality."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to pay with your face using Verix",
+    "step": [
+      { "@type": "HowToStep", "name": "Enroll once", "text": "The shopper links a card or bank account to their face in the Verix app or at an in-store kiosk. Verix stores a one-way face template, never a photo or card number." },
+      { "@type": "HowToStep", "name": "Verify at checkout", "text": "The terminal scans the shopper's face, checks liveness to block spoofs, and matches the template in under 400 milliseconds." },
+      { "@type": "HowToStep", "name": "Authorize with proof", "text": "Verix authorizes the charge and attaches biometric proof of consent — the record that defeats chargeback fraud." },
+      { "@type": "HowToStep", "name": "Settle and reconcile", "text": "Funds settle through your existing processor. Any dispute arrives with the proof already attached." }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How does Verix stop chargeback fraud?", "acceptedAnswer": { "@type": "Answer", "text": "Every Verix payment includes a signed biometric proof that the real account holder was physically present and approved the charge. When a friendly-fraud dispute comes in, that proof is attached to the transaction, so issuers reverse far fewer of them." } },
+      { "@type": "Question", "name": "What happens to card data with Verix?", "acceptedAnswer": { "@type": "Answer", "text": "There is no card data at the counter. Verix replaces the card with a face-bound credential and stores a one-way biometric template, not photos or card numbers. A breach of the terminal yields nothing usable." } },
+      { "@type": "Question", "name": "Can someone spoof a face to pay with Verix?", "acceptedAnswer": { "@type": "Answer", "text": "Verix runs presentation-attack detection (liveness) tested to ISO/IEC 30107 and matches against NIST-evaluated models, with a false-accept rate near 1 in 1,000,000. Photos, masks, and screens are rejected." } },
+      { "@type": "Question", "name": "How fast is checkout with Verix?", "acceptedAnswer": { "@type": "Answer", "text": "A face scan verifies in under 400 milliseconds — faster than a chip insert. There is no tap, PIN, or phone to fumble with." } },
+      { "@type": "Question", "name": "Do shoppers have to enroll first?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, once. Shoppers link a card or bank account to their face in the Verix app or at an in-store kiosk. After that, they pay by looking at the terminal." } },
+      { "@type": "Question", "name": "Is biometric data private and compliant?", "acceptedAnswer": { "@type": "Answer", "text": "Verix is built for GDPR and U.S. biometric laws like Illinois BIPA: explicit consent, one-way templates, no raw images retained, and shopper-controlled deletion." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://verix.example/",
+    "name": "Verix — Biometric Payments That End Card & Chargeback Fraud",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".hero h1", ".hero-lede"] }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="wordmark" href="#top" aria-label="Verix home">
+        <svg class="vmark" viewBox="0 0 40 36" fill="none" aria-hidden="true">
+          <path d="M5 6 L20 30 L35 6" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="wordmark-rule" aria-hidden="true"></span>
+        <span class="wordmark-text">VERIX</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#industries">Industries</a>
+        <a href="#developers">Developers</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="link-signin" href="#signin">Sign in</a>
+        <a class="btn btn-ink" href="#pricing">Talk to sales</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+      <a href="#how">How it works</a>
+      <a href="#industries">Industries</a>
+      <a href="#developers">Developers</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#signin">Sign in</a>
+      <a class="btn btn-violet" href="#pricing">Talk to sales</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal" style="--rd:0s">— Biometric payments for physical commerce</p>
+          <h1 class="display-1 reveal" style="--rd:.07s">
+            Pay by <span class="accent">face</span>. End card fraud and chargebacks.
+          </h1>
+          <p class="body-1 hero-lede reveal" style="--rd:.14s">
+            Verix is a biometric payment credential — the cardholder's face replaces
+            the card at the point of sale. There's nothing to steal or clone, and
+            every charge carries proof the real account holder approved it. Card
+            fraud and chargeback fraud both stop.
+          </p>
+          <div class="hero-cta reveal" style="--rd:.21s">
+            <a class="btn btn-violet" href="#pricing">Talk to sales</a>
+            <a class="btn btn-outline" href="#how">See how it works</a>
+          </div>
+        </div>
+
+        <aside class="stats-card reveal" style="--rd:.28s" aria-label="Verix at a glance">
+          <dl class="stats">
+            <div class="stat">
+              <dt class="caps-label">Median verify</dt>
+              <dd class="mono-amount accent">380<span class="unit">ms</span></dd>
+            </div>
+            <div class="stat">
+              <dt class="caps-label">False accept rate</dt>
+              <dd class="mono-amount">1<span class="unit">/ 1M</span></dd>
+            </div>
+            <div class="stat">
+              <dt class="caps-label">Card data stored</dt>
+              <dd class="mono-amount">0</dd>
+            </div>
+            <div class="stat">
+              <dt class="caps-label">Charges with proof</dt>
+              <dd class="mono-amount">100<span class="unit">%</span></dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ STANDARDS / TRUST BAND ============ -->
+    <section class="strip" aria-label="Standards and certifications">
+      <div class="container">
+        <ul class="strip-list">
+          <li>PCI DSS Level 1</li>
+          <li>ISO/IEC 30107 PAD</li>
+          <li>NIST FRVT</li>
+          <li>FIDO2</li>
+          <li>SOC 2 Type II</li>
+          <li>GDPR · BIPA</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS (AEO question + HowTo) ============ -->
+    <section class="section" id="how">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">— How it works</p>
+          <h2 class="display-2">How does paying with your face work?</h2>
+          <p class="body-1 section-sub">
+            Verix binds a shopper's payment credential to a face template during a
+            one-time enrollment. At checkout, the terminal captures a live face scan,
+            confirms liveness, and matches it to the credential in under 400&nbsp;ms —
+            then authorizes the charge with cryptographic, biometric proof the real
+            account holder approved it.
+          </p>
+        </header>
+
+        <ol class="step-grid">
+          <li class="step">
+            <span class="step-num mono">01</span>
+            <h3 class="step-title">Enroll once</h3>
+            <p class="body-2">The shopper links a card or bank account to their face in the app or at a kiosk. Verix keeps a one-way face template — never a photo or card number.</p>
+          </li>
+          <li class="step">
+            <span class="step-num mono">02</span>
+            <h3 class="step-title">Verify at checkout</h3>
+            <p class="body-2">The terminal scans the shopper's face, checks liveness to block photos and masks, and matches the template in under 400&nbsp;ms.</p>
+          </li>
+          <li class="step">
+            <span class="step-num mono">03</span>
+            <h3 class="step-title">Authorize with proof</h3>
+            <p class="body-2">Verix authorizes the charge and attaches signed biometric proof of consent — the record that defeats chargeback fraud.</p>
+          </li>
+          <li class="step">
+            <span class="step-num mono">04</span>
+            <h3 class="step-title">Settle and reconcile</h3>
+            <p class="body-2">Funds settle through your existing processor. Any dispute arrives with the proof already attached.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ VALUE PROPS ============ -->
+    <section class="section section-why" id="why">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">— Why Verix</p>
+          <h2 class="display-2">Take out the card. Take out the fraud.</h2>
+          <p class="body-1 section-sub">
+            The card is the thing that gets stolen, skimmed, and disputed. Replace it
+            with a face, and the most expensive fraud at the counter has nothing left
+            to attack.
+          </p>
+        </header>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-index mono">01</span>
+            <h3 class="heading-1">No card to steal</h3>
+            <p class="body-2">
+              No card number, magstripe, or token sits at the counter. Skimming,
+              cloning, and lost-or-stolen card fraud have nothing to work with.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index mono">02</span>
+            <h3 class="heading-1">No chargeback fraud</h3>
+            <p class="body-2">
+              Every charge carries biometric proof the account holder was present and
+              approved it. "I didn't buy this" disputes don't hold up.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index mono">03</span>
+            <h3 class="heading-1">Faster lines</h3>
+            <p class="body-2">
+              A face scan clears in under 400&nbsp;ms. No card tap, no PIN, no phone —
+              the shopper looks at the terminal and goes.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index mono">04</span>
+            <h3 class="heading-1">Nothing to breach</h3>
+            <p class="body-2">
+              Verix stores one-way face templates, not photos or card data. A breach
+              of your terminals yields nothing an attacker can use or sell.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INDUSTRIES ============ -->
+    <section class="section" id="industries">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">— Industries</p>
+          <h2 class="display-2">Built for the counters that don't stop.</h2>
+          <p class="body-1 section-sub">
+            One credential, tuned to how each venue takes money and where each one
+            loses it — from a single register to forty concession stands behind a gate.
+          </p>
+        </header>
+
+        <ul class="industry-grid">
+          <li class="industry-card">
+            <span class="mono industry-code">in_retail</span>
+            <h3 class="industry-name">Retail</h3>
+            <p class="body-2">Stop lost-and-stolen card fraud at the register and self-serve kiosk. Returns verify against the same face that paid.</p>
+          </li>
+          <li class="industry-card">
+            <span class="mono industry-code">in_gaming</span>
+            <h3 class="industry-name">Gaming</h3>
+            <p class="body-2">Tie every cage, table, and kiosk transaction to a verified identity — and clear KYC and age checks in the same scan.</p>
+          </li>
+          <li class="industry-card">
+            <span class="mono industry-code">in_restaurants</span>
+            <h3 class="industry-name">Restaurants</h3>
+            <p class="body-2">Close tabs with a glance. Tips and adjustments carry proof, so "I never authorized that" chargebacks end.</p>
+          </li>
+          <li class="industry-card">
+            <span class="mono industry-code">in_healthcare</span>
+            <h3 class="industry-name">Healthcare</h3>
+            <p class="body-2">Match every co-pay and patient balance to the right person. No card, no shared terminal, no identity mix-ups.</p>
+          </li>
+          <li class="industry-card">
+            <span class="mono industry-code">in_stadiums</span>
+            <h3 class="industry-name">Stadiums</h3>
+            <p class="body-2">Move tens of thousands through gates and concessions face-first. No wallet, no fraud at the stand.</p>
+          </li>
+          <li class="industry-card">
+            <span class="mono industry-code">in_hospitality</span>
+            <h3 class="industry-name">Hospitality</h3>
+            <p class="body-2">Bind room charges and incidentals to the guest's face at check-in. Disputes arrive with proof attached.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SURFACES / TERMINALS ============ -->
+    <section class="section section-surfaces" id="surfaces">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">— Verification, two modes</p>
+          <h2 class="display-2">Same scan. Two surfaces.</h2>
+          <p class="body-1 section-sub">
+            Retail counter on Ghost White; back-of-house terminal on Ink Black. The
+            violet verify action is identical on both — the brand signal stays
+            constant while the shell adapts to the environment.
+          </p>
+        </header>
+
+        <div class="terminal-grid">
+          <!-- RETAIL COUNTER · LIGHT -->
+          <figure class="terminal terminal-light">
+            <figcaption class="terminal-tag">
+              <span class="mono">Retail counter</span>
+              <span class="mono muted">Light · Ghost White</span>
+            </figcaption>
+            <div class="terminal-body">
+              <div class="terminal-status mono">
+                <span><span class="dot"></span>verix · t_29C · live</span>
+                <span class="muted">14:08:11</span>
+              </div>
+              <p class="caps-label">Merchant</p>
+              <p class="heading-1 terminal-merchant">Northcap Outfitters · Store 014</p>
+              <p class="caps-label">Amount due</p>
+              <p class="mono-amount terminal-amount"><span class="unit pre">$</span>84.20</p>
+              <div class="terminal-rule"></div>
+              <dl class="line-items mono">
+                <div><dt>2 × Trail shell · L</dt><dd>72.00</dd></div>
+                <div><dt>Tax · 8.5%</dt><dd>6.12</dd></div>
+                <div><dt>Tip</dt><dd>6.08</dd></div>
+              </dl>
+              <div class="verify-row mono">
+                <span class="verify-label"><svg class="scan-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.1" stroke="currentColor" stroke-width="1.8"/><path d="M8.4 16c.7-1.3 2-2.1 3.6-2.1s2.9.8 3.6 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Face match</span>
+                <span class="verify-val">0.992 · liveness ✓</span>
+              </div>
+              <div class="terminal-actions" aria-hidden="true">
+                <button class="btn btn-outline" type="button" tabindex="-1">Cancel</button>
+                <button class="btn btn-violet" type="button" tabindex="-1">Verify&nbsp;·&nbsp;$&nbsp;84.20</button>
+              </div>
+              <p class="terminal-foot mono">verix · enroll → verify → authorize · matched in 380 ms</p>
+            </div>
+          </figure>
+
+          <!-- BACK-OF-HOUSE · DARK -->
+          <figure class="terminal terminal-dark">
+            <figcaption class="terminal-tag">
+              <span class="mono">Back-of-house terminal</span>
+              <span class="mono muted">Dark · Ink Black</span>
+            </figcaption>
+            <div class="terminal-body">
+              <div class="terminal-status mono">
+                <span><span class="dot"></span>verix · t_07A · live</span>
+                <span class="muted">14:08:11</span>
+              </div>
+              <p class="caps-label">Merchant</p>
+              <p class="heading-1 terminal-merchant">Saint Marin Hotel · F&amp;B / Bar</p>
+              <p class="caps-label">Amount due</p>
+              <p class="mono-amount terminal-amount"><span class="unit pre">$</span>84.20</p>
+              <div class="terminal-rule"></div>
+              <dl class="line-items mono">
+                <div><dt>Tab 022 · 4 items</dt><dd>72.00</dd></div>
+                <div><dt>Service · 8.5%</dt><dd>6.12</dd></div>
+                <div><dt>Tip</dt><dd>6.08</dd></div>
+              </dl>
+              <div class="verify-row mono">
+                <span class="verify-label"><svg class="scan-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.1" stroke="currentColor" stroke-width="1.8"/><path d="M8.4 16c.7-1.3 2-2.1 3.6-2.1s2.9.8 3.6 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Face match</span>
+                <span class="verify-val">0.994 · liveness ✓</span>
+              </div>
+              <div class="terminal-actions" aria-hidden="true">
+                <button class="btn btn-outline btn-outline-dark" type="button" tabindex="-1">Cancel</button>
+                <button class="btn btn-violet" type="button" tabindex="-1">Verify&nbsp;·&nbsp;$&nbsp;84.20</button>
+              </div>
+              <p class="terminal-foot mono">verix · enroll → verify → authorize · matched in 380 ms</p>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEVELOPERS ============ -->
+    <section class="section section-dev" id="developers">
+      <div class="container dev-grid">
+        <div class="dev-copy">
+          <p class="eyebrow eyebrow-on-dark">— Developers</p>
+          <h2 class="display-2 on-dark">One SDK for every counter you run.</h2>
+          <p class="body-1 on-dark-muted">
+            A single API and SDKs for enrollment, liveness, and verification. Drop
+            Verix into your existing POS — the shopper verifies with a face, and you
+            get an authorization plus a signed consent proof on every charge.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-violet" href="#pricing">Read the docs</a>
+            <a class="btn btn-outline btn-outline-dark" href="#pricing">Get API keys</a>
+          </div>
+        </div>
+
+        <div class="code-window" role="img" aria-label="Example Verix face-verification API response">
+          <div class="code-bar mono">
+            <span><span class="dot"></span>verix-cli · verify</span>
+            <span class="muted">380ms</span>
+          </div>
+          <pre class="code-block mono"><span class="c-com"># verify a charge with the shopper's face</span>
+<span class="c-cmd">$</span> verix verify create \
+    --endpoint <span class="c-str">ep_handheld</span> \
+    --amount <span class="c-num">8420</span> --currency <span class="c-str">usd</span>
+
+<span class="c-key">{</span>
+  <span class="c-prop">"id"</span>:            <span class="c-str">"txn_01HZQ4K9P3F7D8"</span>,
+  <span class="c-prop">"status"</span>:        <span class="c-acc">"approved"</span>,
+  <span class="c-prop">"method"</span>:        <span class="c-str">"face"</span>,
+  <span class="c-prop">"match_score"</span>:   <span class="c-num">0.992</span>,
+  <span class="c-prop">"liveness"</span>:      <span class="c-acc">"pass"</span>,
+  <span class="c-prop">"consent_proof"</span>: <span class="c-str">"cp_3F7D8K9P3"</span>,
+  <span class="c-prop">"latency_ms"</span>:    <span class="c-num">380</span>
+<span class="c-key">}</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ (AEO / FAQPage) ============ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">— FAQ</p>
+          <h2 class="display-2">Questions operators ask.</h2>
+        </header>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3 class="faq-q">How does Verix stop chargeback fraud?</h3>
+            <p class="faq-a">Every Verix payment includes a signed biometric proof that the real account holder was physically present and approved the charge. When a friendly-fraud dispute comes in, that proof is attached to the transaction — so issuers reverse far fewer of them.</p>
+          </article>
+          <article class="faq-item">
+            <h3 class="faq-q">What happens to card data?</h3>
+            <p class="faq-a">There isn't any at the counter. Verix replaces the card with a face-bound credential and stores a one-way biometric template, not photos or card numbers. A breach of the terminal yields nothing usable.</p>
+          </article>
+          <article class="faq-item">
+            <h3 class="faq-q">Can someone spoof a face to pay?</h3>
+            <p class="faq-a">Verix runs presentation-attack detection (liveness) tested to ISO/IEC 30107 and matches against NIST-evaluated models, with a false-accept rate near 1 in 1,000,000. Photos, masks, and screens are rejected.</p>
+          </article>
+          <article class="faq-item">
+            <h3 class="faq-q">How fast is checkout?</h3>
+            <p class="faq-a">A face scan verifies in under 400 milliseconds — faster than a chip insert. There's no tap, PIN, or phone to fumble with.</p>
+          </article>
+          <article class="faq-item">
+            <h3 class="faq-q">Do shoppers have to enroll?</h3>
+            <p class="faq-a">Yes, once. Shoppers link a card or bank account to their face in the Verix app or at an in-store kiosk. After that, they pay by looking at the terminal.</p>
+          </article>
+          <article class="faq-item">
+            <h3 class="faq-q">Is biometric data private and compliant?</h3>
+            <p class="faq-a">Verix is built for GDPR and U.S. biometric laws like Illinois BIPA: explicit consent, one-way templates, no raw images retained, and shopper-controlled deletion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="section section-cta" id="pricing">
+      <div class="container cta-inner">
+        <p class="eyebrow">— Talk to sales</p>
+        <h2 class="display-2">Take the card out of the equation.</h2>
+        <p class="body-1 section-sub centered">
+          See Verix verify a live payment at your counter. Volume-based pricing,
+          billed by settlement. Talk to our team about retail, gaming, restaurants,
+          and beyond.
+        </p>
+        <div class="hero-cta centered" id="contact">
+          <a class="btn btn-violet" href="#contact">Talk to sales</a>
+          <a class="btn btn-outline" href="#how">See how it works</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="wordmark wordmark-footer" href="#top" aria-label="Verix home">
+          <svg class="vmark" viewBox="0 0 40 36" fill="none" aria-hidden="true">
+            <path d="M5 6 L20 30 L35 6" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="wordmark-rule" aria-hidden="true"></span>
+          <span class="wordmark-text">VERIX</span>
+        </a>
+        <p class="body-2 footer-tagline">Biometric payment credentials for physical commerce.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Product">
+        <p class="caps-label">Product</p>
+        <a href="#how">How it works</a>
+        <a href="#why">Why Verix</a>
+        <a href="#developers">Developers</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <nav class="footer-col" aria-label="Industries">
+        <p class="caps-label">Industries</p>
+        <a href="#industries">Retail</a>
+        <a href="#industries">Gaming</a>
+        <a href="#industries">Restaurants</a>
+        <a href="#industries">Healthcare</a>
+      </nav>
+      <nav class="footer-col" aria-label="Company">
+        <p class="caps-label">Company</p>
+        <a href="#faq">FAQ</a>
+        <a href="#pricing">Talk to sales</a>
+        <a href="#signin">Sign in</a>
+      </nav>
+    </div>
+
+    <div class="container footer-meta mono">
+      <span>VERIX · BIOMETRIC PAYMENTS · © 2026</span>
+      <span class="muted">PLUS JAKARTA SANS · JETBRAINS MONO · DEEP VIOLET #5B47E0</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
