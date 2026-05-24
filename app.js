@@ -16,3 +16,27 @@ if (toggle && mobileNav) {
     });
   });
 }
+
+// Scroll-reveal (progressive enhancement)
+// Elements with [data-sr] fade up when they enter the viewport.
+// The .js class (set synchronously in <head>) enables CSS hiding
+// so content is never invisible without JS support.
+;(function () {
+  if (!("IntersectionObserver" in window)) return;
+
+  const els = Array.from(document.querySelectorAll("[data-sr]"));
+  if (!els.length) return;
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("sr-visible");
+        io.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -48px 0px" }
+  );
+
+  els.forEach((el) => io.observe(el));
+})();
