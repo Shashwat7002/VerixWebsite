@@ -209,12 +209,22 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 }
 .hero {
   position: relative;
+  overflow: hidden;
   padding-block: clamp(56px, 9vw, 120px);
-  /* §05 texture — dot grid, background only, static */
   background-color: var(--ghost);
+}
+/* §05 texture lives on its own layer so JS can translateY it
+   without repainting any layout — pure compositor operation */
+.hero-bg {
+  position: absolute;
+  inset: -6% 0;      /* oversized vertically to hide parallax edges */
   background-image: radial-gradient(rgba(15,14,23,0.05) 1px, transparent 1px);
   background-size: 8px 8px;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 0;
 }
+.hero-grid { position: relative; z-index: 1; }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -301,7 +311,22 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
   list-style: none; margin: 0; padding: 0;
 }
-.step { padding-top: 20px; border-top: 1px solid var(--ink); }
+/* Step top border — scaleX line-draw, GPU-composited (no layout reflow) */
+.step { padding-top: 20px; position: relative; }
+.step::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink);
+  transform-origin: left center;
+  transform: scaleX(1); /* visible by default (no JS) */
+  transition: transform .85s var(--ease-anim);
+  transition-delay: var(--rd, 0s);
+}
+/* With JS: collapsed until sr-visible fires */
+.js .step[data-sr]::before         { transform: scaleX(0); }
+.js .step[data-sr].sr-visible::before { transform: scaleX(1); }
 .step-num { display: block; font-size: 13px; color: var(--violet); margin-bottom: 16px; }
 .step-title { font-weight: 600; font-size: 19px; letter-spacing: -0.015em; margin-bottom: 10px; }
 
@@ -548,16 +573,29 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
    SCROLL-REVEAL  (IntersectionObserver — progressive enhancement)
    .js class is set synchronously in <head> so elements are hidden
    before paint. Without JS, content stays visible.
+   Directional variants via data-sr attribute value.
+   All transforms GPU-composited (transform + opacity only).
    ============================================================ */
+
+/* Base — fade up (default) */
 .js [data-sr] {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity .7s var(--ease-anim), transform .7s var(--ease-anim);
+  transform: translateY(28px);
+  transition: opacity .72s var(--ease-anim), transform .72s var(--ease-anim);
   transition-delay: var(--rd, 0s);
+  will-change: transform, opacity;
 }
+/* Directional variants */
+.js [data-sr="left"]  { transform: translateX(-56px); }
+.js [data-sr="right"] { transform: translateX( 56px); }
+.js [data-sr="scale"] { transform: scale(0.92) translateY(14px); }
+.js [data-sr="fade"]  { transform: none; } /* opacity-only — reading contexts */
+
+/* Visible — clears all variants */
 .js [data-sr].sr-visible {
   opacity: 1;
   transform: none;
+  will-change: auto; /* release GPU layer after animation */
 }
 
 /* ============================================================
@@ -569,6 +607,19 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 @keyframes verix-fade-up {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: none; }
+}
+
+/* Live dot pulse — communicates active / real-time status
+   Uses scale + opacity for GPU compositing (no layout reflow) */
+@keyframes verix-dot-pulse {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%       { transform: scale(1.6); opacity: 0.55; }
+}
+.terminal-status .dot,
+.code-bar .dot {
+  animation: verix-dot-pulse 2.8s ease-in-out infinite;
+  display: inline-block;
+  vertical-align: middle;
 }
 .hero .reveal {
   animation: verix-fade-up .7s var(--ease-anim) both;
@@ -631,9 +682,16 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
-  /* with the entrance animation disabled, keep hero content fully visible */
+  /* hero entrance */
   .reveal { opacity: 1 !important; transform: none !important; }
-  /* scroll-reveal: always show content regardless of JS state */
+  /* scroll-reveal: always visible, no transform */
   .js [data-sr],
   .js [data-sr].sr-visible { opacity: 1 !important; transform: none !important; transition: none !important; }
+  /* step border: always drawn */
+  .js .step[data-sr]::before { transform: scaleX(1) !important; transition: none !important; }
+  /* dot pulse: static */
+  .terminal-status .dot,
+  .code-bar .dot { animation: none !important; transform: none !important; opacity: 1 !important; }
+  /* hero parallax: no movement */
+  .hero-bg { transform: none !important; }
 }

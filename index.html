@@ -144,6 +144,7 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow reveal" style="--rd:0s">— Biometric payments for physical commerce</p>
@@ -166,7 +167,7 @@
           <dl class="stats">
             <div class="stat">
               <dt class="caps-label">Median verify</dt>
-              <dd class="mono-amount accent">380<span class="unit">ms</span></dd>
+              <dd class="mono-amount accent" data-count="380">380<span class="unit">ms</span></dd>
             </div>
             <div class="stat">
               <dt class="caps-label">False accept rate</dt>
@@ -178,7 +179,7 @@
             </div>
             <div class="stat">
               <dt class="caps-label">Charges with proof</dt>
-              <dd class="mono-amount">100<span class="unit">%</span></dd>
+              <dd class="mono-amount" data-count="100">100<span class="unit">%</span></dd>
             </div>
           </dl>
         </aside>
@@ -187,7 +188,7 @@
 
     <!-- ============ STANDARDS / TRUST BAND ============ -->
     <section class="strip" aria-label="Standards and certifications">
-      <div class="container">
+      <div class="container" data-sr="fade">
         <ul class="strip-list">
           <li>PCI DSS Level 1</li>
           <li>ISO/IEC 30107 PAD</li>
@@ -202,7 +203,7 @@
     <!-- ============ HOW IT WORKS (AEO question + HowTo) ============ -->
     <section class="section" id="how">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-sr>
           <p class="eyebrow">— How it works</p>
           <h2 class="display-2">How does paying with your face work?</h2>
           <p class="body-1 section-sub">
@@ -215,22 +216,22 @@
         </header>
 
         <ol class="step-grid">
-          <li class="step">
+          <li class="step" data-sr style="--rd:0s">
             <span class="step-num mono">01</span>
             <h3 class="step-title">Enroll once</h3>
             <p class="body-2">The shopper links a card or bank account to their face in the app or at a kiosk. Verix keeps a one-way face template — never a photo or card number.</p>
           </li>
-          <li class="step">
+          <li class="step" data-sr style="--rd:.1s">
             <span class="step-num mono">02</span>
             <h3 class="step-title">Verify at checkout</h3>
             <p class="body-2">The terminal scans the shopper's face, checks liveness to block photos and masks, and matches the template in under 400&nbsp;ms.</p>
           </li>
-          <li class="step">
+          <li class="step" data-sr style="--rd:.2s">
             <span class="step-num mono">03</span>
             <h3 class="step-title">Authorize with proof</h3>
             <p class="body-2">Verix authorizes the charge and attaches signed biometric proof of consent — the record that defeats chargeback fraud.</p>
           </li>
-          <li class="step">
+          <li class="step" data-sr style="--rd:.3s">
             <span class="step-num mono">04</span>
             <h3 class="step-title">Settle and reconcile</h3>
             <p class="body-2">Funds settle through your existing processor. Any dispute arrives with the proof already attached.</p>
@@ -242,7 +243,7 @@
     <!-- ============ VALUE PROPS ============ -->
     <section class="section section-why" id="why">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-sr>
           <p class="eyebrow">— Why Verix</p>
           <h2 class="display-2">Take out the card. Take out the fraud.</h2>
           <p class="body-1 section-sub">
@@ -253,7 +254,7 @@
         </header>
 
         <div class="feature-grid">
-          <article class="feature-card">
+          <article class="feature-card" data-sr style="--rd:0s">
             <span class="feature-index mono">01</span>
             <h3 class="heading-1">No card to steal</h3>
             <p class="body-2">
@@ -261,7 +262,7 @@
               cloning, and lost-or-stolen card fraud have nothing to work with.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-sr style="--rd:.08s">
             <span class="feature-index mono">02</span>
             <h3 class="heading-1">No chargeback fraud</h3>
             <p class="body-2">
@@ -269,7 +270,7 @@
               approved it. "I didn't buy this" disputes don't hold up.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-sr style="--rd:.16s">
             <span class="feature-index mono">03</span>
             <h3 class="heading-1">Faster lines</h3>
             <p class="body-2">
@@ -277,7 +278,7 @@
               the shopper looks at the terminal and goes.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-sr style="--rd:.24s">
             <span class="feature-index mono">04</span>
             <h3 class="heading-1">Nothing to breach</h3>
             <p class="body-2">
@@ -292,7 +293,7 @@
     <!-- ============ INDUSTRIES ============ -->
     <section class="section" id="industries">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-sr>
           <p class="eyebrow">— Industries</p>
           <h2 class="display-2">Built for the counters that don't stop.</h2>
           <p class="body-1 section-sub">
@@ -302,32 +303,32 @@
         </header>
 
         <ul class="industry-grid">
-          <li class="industry-card">
+          <li class="industry-card" data-sr style="--rd:0s">
             <span class="mono industry-code">in_retail</span>
             <h3 class="industry-name">Retail</h3>
             <p class="body-2">Stop lost-and-stolen card fraud at the register and self-serve kiosk. Returns verify against the same face that paid.</p>
           </li>
-          <li class="industry-card">
+          <li class="industry-card" data-sr style="--rd:.07s">
             <span class="mono industry-code">in_gaming</span>
             <h3 class="industry-name">Gaming</h3>
             <p class="body-2">Tie every cage, table, and kiosk transaction to a verified identity — and clear KYC and age checks in the same scan.</p>
           </li>
-          <li class="industry-card">
+          <li class="industry-card" data-sr style="--rd:.14s">
             <span class="mono industry-code">in_restaurants</span>
             <h3 class="industry-name">Restaurants</h3>
             <p class="body-2">Close tabs with a glance. Tips and adjustments carry proof, so "I never authorized that" chargebacks end.</p>
           </li>
-          <li class="industry-card">
+          <li class="industry-card" data-sr style="--rd:.21s">
             <span class="mono industry-code">in_healthcare</span>
             <h3 class="industry-name">Healthcare</h3>
             <p class="body-2">Match every co-pay and patient balance to the right person. No card, no shared terminal, no identity mix-ups.</p>
           </li>
-          <li class="industry-card">
+          <li class="industry-card" data-sr style="--rd:.28s">
             <span class="mono industry-code">in_stadiums</span>
             <h3 class="industry-name">Stadiums</h3>
             <p class="body-2">Move tens of thousands through gates and concessions face-first. No wallet, no fraud at the stand.</p>
           </li>
-          <li class="industry-card">
+          <li class="industry-card" data-sr style="--rd:.35s">
             <span class="mono industry-code">in_hospitality</span>
             <h3 class="industry-name">Hospitality</h3>
             <p class="body-2">Bind room charges and incidentals to the guest's face at check-in. Disputes arrive with proof attached.</p>
@@ -339,7 +340,7 @@
     <!-- ============ SURFACES / TERMINALS ============ -->
     <section class="section section-surfaces" id="surfaces">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-sr>
           <p class="eyebrow">— Verification, two modes</p>
           <h2 class="display-2">Same scan. Two surfaces.</h2>
           <p class="body-1 section-sub">
@@ -351,7 +352,7 @@
 
         <div class="terminal-grid">
           <!-- RETAIL COUNTER · LIGHT -->
-          <figure class="terminal terminal-light">
+          <figure class="terminal terminal-light" data-sr="left">
             <figcaption class="terminal-tag">
               <span class="mono">Retail counter</span>
               <span class="mono muted">Light · Ghost White</span>
@@ -384,7 +385,7 @@
           </figure>
 
           <!-- BACK-OF-HOUSE · DARK -->
-          <figure class="terminal terminal-dark">
+          <figure class="terminal terminal-dark" data-sr="right" style="--rd:.08s">
             <figcaption class="terminal-tag">
               <span class="mono">Back-of-house terminal</span>
               <span class="mono muted">Dark · Ink Black</span>
@@ -422,7 +423,7 @@
     <!-- ============ DEVELOPERS ============ -->
     <section class="section section-dev" id="developers">
       <div class="container dev-grid">
-        <div class="dev-copy">
+        <div class="dev-copy" data-sr>
           <p class="eyebrow eyebrow-on-dark">— Developers</p>
           <h2 class="display-2 on-dark">One SDK for every counter you run.</h2>
           <p class="body-1 on-dark-muted">
@@ -436,7 +437,7 @@
           </div>
         </div>
 
-        <div class="code-window" role="img" aria-label="Example Verix face-verification API response">
+        <div class="code-window" role="img" aria-label="Example Verix face-verification API response" data-sr="scale" style="--rd:.12s">
           <div class="code-bar mono">
             <span><span class="dot"></span>verix-cli · verify</span>
             <span class="muted">380ms</span>
@@ -462,33 +463,33 @@
     <!-- ============ FAQ (AEO / FAQPage) ============ -->
     <section class="section" id="faq">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-sr>
           <p class="eyebrow">— FAQ</p>
           <h2 class="display-2">Questions operators ask.</h2>
         </header>
 
         <div class="faq-list">
-          <article class="faq-item">
+          <article class="faq-item" data-sr="fade" style="--rd:0s">
             <h3 class="faq-q">How does Verix stop chargeback fraud?</h3>
             <p class="faq-a">Every Verix payment includes a signed biometric proof that the real account holder was physically present and approved the charge. When a friendly-fraud dispute comes in, that proof is attached to the transaction — so issuers reverse far fewer of them.</p>
           </article>
-          <article class="faq-item">
+          <article class="faq-item" data-sr="fade" style="--rd:.07s">
             <h3 class="faq-q">What happens to card data?</h3>
             <p class="faq-a">There isn't any at the counter. Verix replaces the card with a face-bound credential and stores a one-way biometric template, not photos or card numbers. A breach of the terminal yields nothing usable.</p>
           </article>
-          <article class="faq-item">
+          <article class="faq-item" data-sr="fade" style="--rd:.14s">
             <h3 class="faq-q">Can someone spoof a face to pay?</h3>
             <p class="faq-a">Verix runs presentation-attack detection (liveness) tested to ISO/IEC 30107 and matches against NIST-evaluated models, with a false-accept rate near 1 in 1,000,000. Photos, masks, and screens are rejected.</p>
           </article>
-          <article class="faq-item">
+          <article class="faq-item" data-sr="fade" style="--rd:.21s">
             <h3 class="faq-q">How fast is checkout?</h3>
             <p class="faq-a">A face scan verifies in under 400 milliseconds — faster than a chip insert. There's no tap, PIN, or phone to fumble with.</p>
           </article>
-          <article class="faq-item">
+          <article class="faq-item" data-sr="fade" style="--rd:.28s">
             <h3 class="faq-q">Do shoppers have to enroll?</h3>
             <p class="faq-a">Yes, once. Shoppers link a card or bank account to their face in the Verix app or at an in-store kiosk. After that, they pay by looking at the terminal.</p>
           </article>
-          <article class="faq-item">
+          <article class="faq-item" data-sr="fade" style="--rd:.35s">
             <h3 class="faq-q">Is biometric data private and compliant?</h3>
             <p class="faq-a">Verix is built for GDPR and U.S. biometric laws like Illinois BIPA: explicit consent, one-way templates, no raw images retained, and shopper-controlled deletion.</p>
           </article>
@@ -498,7 +499,7 @@
 
     <!-- ============ FINAL CTA ============ -->
     <section class="section section-cta" id="pricing">
-      <div class="container cta-inner">
+      <div class="container cta-inner" data-sr>
         <p class="eyebrow">— Talk to sales</p>
         <h2 class="display-2">Take the card out of the equation.</h2>
         <p class="body-1 section-sub centered">
